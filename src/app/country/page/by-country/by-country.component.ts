@@ -17,8 +17,10 @@ export class ByCountryComponent {
 
   }
 
-  search () {
+  search (query: string) {
+    console.log ("estoy en el search de bycountry component") 
     this.isSuccessful = true;
+    this.query = query;
     console.log (this.query);
     this.countryService.searchCountry(this.query)
       .subscribe( countries => {

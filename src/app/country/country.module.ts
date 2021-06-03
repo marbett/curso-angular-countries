@@ -7,6 +7,8 @@ import { ByRegionComponent } from './page/by-region/by-region.component';
 import { ViewCountryComponent } from './page/view-country/view-country.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { CountryTableComponent } from './component/country-table/country-table.component';
+import { CountryInputComponent } from './component/country-input/country-input.component';
 
 
 
@@ -16,7 +18,9 @@ import { AppRoutingModule } from '../app-routing.module';
     ByCapitalComponent,
     ByCountryComponent,
     ByRegionComponent,
-    ViewCountryComponent
+    ViewCountryComponent,
+    CountryTableComponent,
+    CountryInputComponent
   ],
   exports: [
     
