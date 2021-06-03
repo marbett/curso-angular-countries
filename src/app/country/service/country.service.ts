@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Country } from '../interface/country.interface';
 
 @Injectable({
@@ -20,13 +19,6 @@ export class CountryService {
 
     return this.httpclient.get<Country[]>(url);
 
-    //otra forma de manejar el error
-    /*
-    return this.httpclient.get(url)
-              .pipe(
-                  catchError ( err => of ([]) ) 
-              )
-    ;
-    */
+    
   }
 }

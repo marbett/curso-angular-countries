@@ -6,6 +6,7 @@ import { ByCountryComponent } from './page/by-country/by-country.component';
 import { ByRegionComponent } from './page/by-region/by-region.component';
 import { ViewCountryComponent } from './page/view-country/view-country.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ]
 })
 export class CountryModule { 
