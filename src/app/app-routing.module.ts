@@ -4,12 +4,13 @@ import { ByCountryComponent } from './country/page/by-country/by-country.compone
 import { ByRegionComponent } from './country/page/by-region/by-region.component';
 import { ByCapitalComponent } from './country/page/by-capital/by-capital.component';
 import { ViewCountryComponent } from './country/page/view-country/view-country.component';
+
 const routes: Routes = [
     {
         path: '',
         component: ByCountryComponent,
         pathMatch: 'full'
-    },
+    },    
     {
         path: 'region',
         component: ByRegionComponent,
@@ -18,6 +19,11 @@ const routes: Routes = [
     {
         path: 'capital',
         component: ByCapitalComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'country',
+        component: ByCountryComponent,
         pathMatch: 'full'
     },
     {

@@ -1,1 +1,49 @@
-<p>by-country works!</p>
+<h2>By country</h2>
+<hr/>
+
+.<div class="row">
+    <div class = "col">
+        <form (ngSubmit) = "search()" autocomplete="off">
+            <input type = "text" 
+                    name = "query"
+                    class = "form-control"
+                    placeholder = "Search country..."
+                    [(ngModel)] = "query"
+            />
+
+        </form>
+    </div>
+    
+</div>
+
+<hr/>
+
+<div *ngIf="!isSuccessful" class = "alert alert-danger">
+    No results for : {{query}}
+</div>
+
+<div *ngIf="isSuccessful" class = "row">
+    <div class = "col">
+        <table class = "table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Flag</th>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>bandera</td>
+                    <td>nombre</td>
+                    <td>123132</td>
+                    <td><a href="/country/cri">Ver...</a></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

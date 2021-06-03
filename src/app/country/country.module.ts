@@ -5,6 +5,7 @@ import { ByCapitalComponent } from './page/by-capital/by-capital.component';
 import { ByCountryComponent } from './page/by-country/by-country.component';
 import { ByRegionComponent } from './page/by-region/by-region.component';
 import { ViewCountryComponent } from './page/view-country/view-country.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,11 @@ import { ViewCountryComponent } from './page/view-country/view-country.component
     ViewCountryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
-export class CountryModule { }
+export class CountryModule { 
+
+  
+}
