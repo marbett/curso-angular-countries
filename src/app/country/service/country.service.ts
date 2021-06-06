@@ -16,9 +16,16 @@ export class CountryService {
 
   searchCountry (query: string): Observable<Country[]> {
     const url = `${this.apiUrl}/name/${query}`;
-
     return this.httpclient.get<Country[]>(url);
+  }
 
-    
+  searchCapital (query: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${query}`;
+    return this.httpclient.get<Country[]>(url);
+  }
+
+  searchRegion (query: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/region/${query}`;
+    return this.httpclient.get<Country[]>(url);
   }
 }
