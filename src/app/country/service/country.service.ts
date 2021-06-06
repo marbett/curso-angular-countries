@@ -28,4 +28,9 @@ export class CountryService {
     const url = `${this.apiUrl}/region/${query}`;
     return this.httpclient.get<Country[]>(url);
   }
+
+  viewCountry (id: string): Observable<Country> {
+    const url = `${this.apiUrl}/alpha/${id}`;
+    return this.httpclient.get<Country>(url);
+  }
 }
