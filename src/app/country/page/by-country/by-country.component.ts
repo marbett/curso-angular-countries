@@ -36,4 +36,9 @@ export class ByCountryComponent {
     ;
   }
 
+  suggest ( query: string) {
+    this.isSuccessful = true;
+    //TODO crear sugerencias
+  }
+
 }
