@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators'; //recibir un observable y retornar otro observable
+import { switchMap, tap } from 'rxjs/operators'; //recibir un observable y retornar otro observable
+import { Country } from '../../interface/country.interface';
 import { CountryService } from '../../service/country.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { CountryService } from '../../service/country.service';
   //styleUrls: ['./view-country.component.css']
 })
 export class ViewCountryComponent implements OnInit {
+
+  country!: Country;
 
   constructor (
     private activedRoute: ActivatedRoute,
@@ -28,13 +31,10 @@ export class ViewCountryComponent implements OnInit {
     */
     this.activedRoute.params
       .pipe(
-        switchMap( ({id}) =>  this.countryService.viewCountry(id)
-        )
+        switchMap( ({id}) =>  this.countryService.viewCountry(id)),
+        tap (console.log)
       )
-      .subscribe (resp => {
-        console.log(resp);
-        
-      })
+      .subscribe (country => this.country = country );
     
   }
 
