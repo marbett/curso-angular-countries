@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs/operators'; //recibir un observable y retornar otro observable
 import { CountryService } from '../../service/country.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class ViewCountryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    /*
     this.activedRoute.params
       .subscribe (({id}) => {
         console.log(id);
@@ -23,7 +25,16 @@ export class ViewCountryComponent implements OnInit {
             console.log(country);
           })
       })
-
+    */
+    this.activedRoute.params
+      .pipe(
+        switchMap( ({id}) =>  this.countryService.viewCountry(id)
+        )
+      )
+      .subscribe (resp => {
+        console.log(resp);
+        
+      })
     
   }
 
