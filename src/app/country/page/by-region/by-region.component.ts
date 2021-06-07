@@ -5,14 +5,15 @@ import { CountryService } from '../../service/country.service';
 @Component({
   selector: 'app-by-region',
   templateUrl: './by-region.component.html',
-  //styleUrls: ['./by-region.component.css']
+  styleUrls: ['./by-region.component.css']
 })
 export class ByRegionComponent {
 
   query: string = "";
   isSuccessful: boolean = true;
   countries: Country[] = [];
-
+  regions: string [] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
+  
   constructor(private countryService: CountryService) { 
 
   }
@@ -36,8 +37,9 @@ export class ByRegionComponent {
     ;
   }
 
-  suggest ( query: string) {
-    this.isSuccessful = true;
-    //TODO crear sugerencias
-  }
+    getCssClass (query: string): string {
+      return (this.query === query) ? 'btn btn-primary' : 'btn btn-outline-primary';
+    }
+  
+
 }

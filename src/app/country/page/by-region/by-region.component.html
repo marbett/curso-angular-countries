@@ -1,18 +1,23 @@
-<h2>By region</h2>
+<h2>By region: {{query | titlecase}}</h2>
 <hr/>
 
-.<div class="row">
-    <div class = "col">
-        <app-country-input 
-            (onEnter)="search( $event )"
-            (onDebounce) = "suggest( $event )"
-            placeholder = "Search region..."
-        >
+<h5>Please, select a region...</h5>
 
-        </app-country-input>
+<div class="row">
+    <div class = "col">
+        <!--[class.btn-primary] = "region === query"-->
+        <button *ngFor="let region of regions"
+            [class] = "getCssClass(region)"
+            (click) = "search(region)"
+        >
+            {{region | titlecase}}
+
+        </button>
     </div>
     
 </div>
+
+
 
 <hr/>
 
