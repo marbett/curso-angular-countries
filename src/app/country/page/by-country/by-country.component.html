@@ -8,15 +8,26 @@
                 (onDebounce) = "suggest( $event )"
                 placeholder = "Search country..."
             >
-
             </app-country-input>
         </div>
     </div>
+    <ul *ngIf="showSuggests" class = "list-group">
+        <li *ngFor="let suggested of suggestedCountries" class="list-group-item list-group-item-action">
+            <a class = "nav-link"
+                [routerLink]="[ '/country', suggested.alpha2Code ]">
+                {{suggested.name}}
+            </a>
+        </li>
+        <li class="list-group-item list-group-item-action"
+            (click) = "search(query)"
+        >
+            <a class = "nav-link">
+                Search: "{{query}}"
+            </a>
+        </li>
+    </ul>
     <hr/>
 </div>
-
-
-
 
 
 <div *ngIf="!isSuccessful" class = "alert alert-danger">
