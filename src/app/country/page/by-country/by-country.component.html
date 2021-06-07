@@ -1,21 +1,23 @@
-<h2>By country</h2>
-<hr/>
+<div class = "animate__animated animate__fadeIn animate__faster">
+    <h2>By country</h2>
+    <hr/>
+    <div class="row">
+        <div class = "col">
+            <app-country-input
+                (onEnter)="search( $event )"
+                (onDebounce) = "suggest( $event )"
+                placeholder = "Search country..."
+            >
 
-.<div class="row">
-    <div class = "col">
-        <app-country-input 
-            (onEnter)="search( $event )"
-            (onDebounce) = "suggest( $event )"
-            placeholder = "Search country..."
-
-        >
-
-        </app-country-input>
+            </app-country-input>
+        </div>
     </div>
-    
+    <hr/>
 </div>
 
-<hr/>
+
+
+
 
 <div *ngIf="!isSuccessful" class = "alert alert-danger">
     No results for : {{query}}
